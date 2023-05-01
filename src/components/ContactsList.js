@@ -21,6 +21,7 @@ const ContactsList = (props) => {
               <th>First Name</th>
               <th>Last Name</th>
               <th>Phone</th>
+              <th>Remove Contact</th>
             </tr>
           </thead>
           <tbody>
