@@ -1,11 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
+import { deleteContact } from "../actions/contactActions";
 import Contact from "./Contact";
 
 const ContactsList = (props) => {
   const { contacts } = props;
 
   console.log("contacts", contacts);
+
+  const handleDeleteContact = (id) => {
+    props.dispatch(deleteContact(id));
+  };
+
   return (
     <div className="contacts-table">
       {contacts.length > 0 ? (
@@ -27,6 +33,8 @@ const ContactsList = (props) => {
                   firstName={firstName}
                   lastName={lastName}
                   phone={phone}
+                  id={id}
+                  handleDeleteContact={handleDeleteContact}
                 />
               );
             })}
